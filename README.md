@@ -7,13 +7,13 @@ This repository accompanies the open-access IEEE Transactions on Wireless Commun
 | File | Description |
 | --- | --- |
 | `DMA_opt_run.m` | Main experiment script. Sweeps user counts, DMA apertures, and sub-carrier sets while alternately optimizing the transmit waveform and DMA tuning vector to satisfy rectenna DC targets with minimum RF/baseband power consumption. Saves intermediate `.mat` files per configuration. 【F:DMA_opt_run.m†L1-L169】 |
-| `DMA_deploy.m` | Places the DMA aperture in space, computes the per-element attenuation matrix, and returns element coordinates based on the desired operating frequency and panel dimensions. 【F:DMA_deploy.m†L1-L35】 |
-| `Channel_comp.m` | Builds the frequency-selective channel tensor between each DMA element and user by combining free-space path loss and a boresight gain model. 【F:Channel_comp.m†L1-L24】 |
-| `DMA_scenario.m` | Given current waveform and DMA settings, synthesizes the multi-sine transmit samples, evaluates rectified DC voltages, and accounts for high-power amplifier efficiency and consumption. 【F:DMA_scenario.m†L1-L53】 |
-| `fixed_W_SCA.m`, `fixed_Q_SCA.m` | Successive convex approximation (SCA) sub-problems that, respectively, refine the DMA Lorentzian weights and the digital beamforming waveform while enforcing hardware and rectifier constraints. 【F:fixed_W_SCA.m†L1-L31】【F:fixed_Q_SCA.m†L1-L45】 |
-| `phase_init_func.m` | Heuristic initializer that allocates RF chains to users and seeds the DMA phase profile and waveform amplitudes before SCA iterations. 【F:phase_init_func.m†L1-L116】 |
-| `H_DMA.m`, `Q_DMA.m`, `Rect_K.m` | Helper routines for the DMA propagation loss, tunable element response, and rectifier Taylor-series coefficients. 【F:H_DMA.m†L1-L29】【F:Q_DMA.m†L1-L4】【F:Rect_K.m†L1-L4】 |
-| `taylor_coef_q.m`, `taylor_coef_w.m` | Generate first-order Taylor expansions of the rectifier output with respect to the DMA weights (`q`) and beamforming waveform (`w`), used by the SCA solvers. 【F:taylor_coef_q.m†L1-L37】【F:taylor_coef_w.m†L1-L36】 |
+| `DMA_deploy.m` | Places the DMA aperture in space, computes the per-element attenuation matrix, and returns element coordinates based on the desired operating frequency and panel dimensions. 
+| `Channel_comp.m` | Builds the frequency-selective channel tensor between each DMA element and user by combining free-space path loss and a boresight gain model. 
+| `DMA_scenario.m` | Given current waveform and DMA settings, synthesizes the multi-sine transmit samples, evaluates rectified DC voltages, and accounts for high-power amplifier efficiency and consumption. 
+| `fixed_W_SCA.m`, `fixed_Q_SCA.m` | Successive convex approximation (SCA) sub-problems that, respectively, refine the DMA Lorentzian weights and the digital beamforming waveform while enforcing hardware and rectifier constraints. 
+| `phase_init_func.m` | Heuristic initializer that allocates RF chains to users and seeds the DMA phase profile and waveform amplitudes before SCA iterations. 
+| `H_DMA.m`, `Q_DMA.m`, `Rect_K.m` | Helper routines for the DMA propagation loss, tunable element response, and rectifier Taylor-series coefficients.
+| `taylor_coef_q.m`, `taylor_coef_w.m` | Generate first-order Taylor expansions of the rectifier output with respect to the DMA weights (`q`) and beamforming waveform (`w`), used by the SCA solvers.
 
 ## Requirements
 
