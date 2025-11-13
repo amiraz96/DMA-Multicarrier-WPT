@@ -17,9 +17,9 @@ This repository accompanies the open-access IEEE Transactions on Wireless Commun
 
 ## Requirements
 
-- MATLAB R2023a or later (tested with the Communications Toolbox for `physconst`).
-- [CVX](http://cvxr.com/cvx/) with the MOSEK solver configured, required by the SCA sub-problems in `fixed_W_SCA.m` and `fixed_Q_SCA.m`. 【F:fixed_W_SCA.m†L12-L26】【F:fixed_Q_SCA.m†L13-L45】
-- The user location datasets referenced in `DMA_opt_run.m` (`user_location.mat`); the scripts expect `user_loc` tensors inside the MAT-file. 【
+- MATLAB R2021a or later.
+- [CVX](http://cvxr.com/cvx/) with the MOSEK solver configured, required by the SCA sub-problems in `fixed_W_SCA.m` and `fixed_Q_SCA.m`. 
+- The user location datasets referenced in `DMA_opt_run.m` (`user_location.mat`); the scripts expect `user_loc` tensors inside the MAT-file. 
 
 ## Reproducing the paper's experiments
 
