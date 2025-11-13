@@ -1,4 +1,4 @@
-# DMA-Multicarrier-WPT
+# Waveform Optimization and Beam Focusing for Near-Field Wireless Power Transfer With Dynamic Metasurface Antennas and Non-Linear Energy Harvesters
 
 This repository accompanies the open-access IEEE Transactions on Wireless Communications article "Waveform Optimization and Beam Focusing for Near-Field Wireless Power Transfer With Dynamic Metasurface Antennas and Non-Linear Energy Harvesters".
 
