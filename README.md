@@ -26,10 +26,10 @@ This repository accompanies the open-access IEEE Transactions on Wireless Commun
 1. Install MATLAB dependencies and ensure CVX/MOSEK are on the MATLAB path.
 2. Place `user_location.mat` (provided with the publication's supplementary material) in the project root.
 3. Open `DMA_opt_run.m` and adjust the search grids if desired:
-   - `L_set` – DMA aperture dimensions (meters). 【F:DMA_opt_run.m†L12-L13】
-   - `M_set` – Number of simultaneous WPT users. 【F:DMA_opt_run.m†L11-L12】【F:DMA_opt_run.m†L56-L69】
-   - `N_set` – Sub-carrier counts for the multi-sine waveform. 【F:DMA_opt_run.m†L11-L13】【F:DMA_opt_run.m†L69-L75】
-   - `DC_Threshold_main` – Rectifier power target per user. 【F:DMA_opt_run.m†L24-L25】
+   - `L_set` – DMA aperture dimensions (meters). 
+   - `M_set` – Number of simultaneous WPT users.
+   - `N_set` – Sub-carrier counts for the multi-sine waveform.
+   - `DC_Threshold_main` – Rectifier power target per user. 
 4. Run the script from MATLAB: `>> DMA_opt_run`.
 5. For each configuration and user index, the script reports progress and stores a `.mat` snapshot (for example, `DMA_OverN_User_1_Length_1_User_num_2_sub_carrier_4.mat`) with the optimized variables and power accounting. 【F:DMA_opt_run.m†L155-L166】
 
@@ -43,16 +43,27 @@ These steps mirror the methodology in the IEEE TWC article, where the DMA is lev
 
 ## Tips for extending the code
 
-- **Alternative channel models:** Replace `Channel_comp.m` with a more detailed propagation model (e.g., clustered multipath) while preserving the output tensor dimensions `(users × subcarriers × RFC × elements)`. 【F:Channel_comp.m†L1-L24】
-- **Hardware constraints:** The Lorentzian response ball constraint in `fixed_W_SCA.m` encodes the feasible DMA tuning manifold. Modify the quadratic inequality if a different metasurface tuning range is required. 【F:fixed_W_SCA.m†L22-L24】
-- **Power accounting:** `DMA_scenario.m` centralizes rectifier modeling and high-power amplifier efficiency. Adjust rectifier parameters (`i_s`, `eta_0`, `V_o`, `R_L`) or the amplifier efficiency curve (`eff_max`, `As`) to match alternative hardware. 【F:DMA_scenario.m†L4-L53】
+- **Alternative channel models:** Replace `Channel_comp.m` with a more detailed propagation model (e.g., clustered multipath) while preserving the output tensor dimensions `(users × subcarriers × RFC × elements)`. 
+- **Hardware constraints:** The Lorentzian response ball constraint in `fixed_W_SCA.m` encodes the feasible DMA tuning manifold. Modify the quadratic inequality if a different metasurface tuning range is required. 
+- **Power accounting:** `DMA_scenario.m` centralizes rectifier modeling and high-power amplifier efficiency. Adjust rectifier parameters (`i_s`, `eta_0`, `V_o`, `R_L`) or the amplifier efficiency curve (`eff_max`, `As`) to match alternative hardware. 
 
-## Reference
+## Citing
 
-If you use this code, please cite:
+If you use this code, please cite the associated article. A BibTeX entry is provided below.
 
-> O. Al-Khateeb, A. M. Elbir, N. Shlezinger, H. V. Poor, and Y. C. Eldar, "Dynamic Metasurface Antenna Enabled Multi-Carrier Wireless Power Transfer," *IEEE Transactions on Wireless Communications*, Early Access, 2024.
+```bibtex
+@ARTICLE{DMA_azarbahram,
+  author={Azarbahram, Amirhossein and López, Onel L. A. and Latva-Aho, Matti},
+  journal={IEEE Transactions on Wireless Communications}, 
+  title={Waveform Optimization and Beam Focusing for Near-Field Wireless Power Transfer With Dynamic Metasurface Antennas and Non-Linear Energy Harvesters}, 
+  year={2025},
+  volume={24},
+  number={2},
+  pages={1031-1045},
+  keywords={Array signal processing;Radio frequency;Wireless communication;Optimization;Power demand;Complexity theory;Rectifiers;Radio transmitters;Costs;Transmitting antennas;Radio frequency wireless power transfer;waveform design;beamforming;dynamic metasurface antennas;near-field channels},
+  doi={10.1109/TWC.2024.3503908}}
+```
 
----
+## License
 
-For questions or clarifications, please refer to the corresponding author details in the journal article.
+The repository inherits the usage rights granted by the original authors. Refer to the paper or contact the authors for explicit licensing terms.
